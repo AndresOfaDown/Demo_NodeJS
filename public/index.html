@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Demo Node.js</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <!-- VISTA 1: FORMULARIO DE LOGIN -->
+        <div id="cardLogin" class="card">
+            <div class="header">
+                <span class="badge">Node.js + Express</span>
+                <h2>Iniciar Sesión</h2>
+                <p class="subtitulo">Demostración práctica para Tecnología Web</p>
+            </div>
+
+            <form id="formLogin">
+                <div class="form-group">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" id="usuario" placeholder="Ej. admin" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="••••••" required>
+                </div>
+
+                <button type="submit" id="btnIngresar">Ingresar</button>
+            </form>
+
+            <div id="mensajeError" class="mensaje error"></div>
+
+            <div class="credenciales-demo">
+                <p><strong>Credenciales de prueba:</strong></p>
+                <p>Usuario: <code>admin</code> | Contraseña: <code>123</code></p>
+                <p>Usuario: <code>estudiante</code> | Contraseña: <code>123</code></p>
+            </div>
+        </div>
+
+        <!-- VISTA 2: BIENVENIDA (SE MUESTRA TRAS LOGIN EXITOSO) -->
+        <div id="cardBienvenida" class="card card-bienvenida" style="display: none;">
+            <div class="header">
+                <span class="badge badge-success">Sesión Iniciada</span>
+                <h2 id="txtNombreUsuario">¡Bienvenido!</h2>
+                <p id="txtRolUsuario" class="subtitulo"></p>
+            </div>
+
+            <div class="info-box">
+                <p>Petición <strong>POST /api/login</strong> procesada exitosamente por el servidor <strong>Node.js</strong>.</p>
+                <p>Los datos fueron validados y respondidos en formato <strong>JSON</strong> sin recargar la página.</p>
+            </div>
+
+            <button id="btnCerrarSesion" class="btn-secondary">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

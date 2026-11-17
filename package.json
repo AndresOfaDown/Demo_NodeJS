@@ -1,0 +1,14 @@
+{
+  "name": "login-demo-nodejs",
+  "version": "1.0.0",
+  "description": "Demostracion simple de Login en Node.js (Nativo vs Express) - INF513 UAGRM",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "nativo": "node servidor_nativo.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
