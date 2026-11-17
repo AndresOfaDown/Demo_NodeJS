@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Node.js</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" id="panelLogin">
+        <h2>Iniciar sesión</h2>
+        <p class="subtitulo">Ingresa tus credenciales para continuar</p>
+        
+        <form id="formLogin">
+            <div class="grupo-input">
+                <input type="text" id="loginUsuario" name="usuario" placeholder="Nombre de usuario o correo" required autofocus>
+            </div>
+            <div class="grupo-input">
+                <input type="password" id="loginPassword" name="password" placeholder="Contraseña" required>
+            </div>
+            
+            <button type="submit" id="btnLogin">Iniciar sesión</button>
+        </form>
+        
+        <div id="mensajeLogin" class="mensaje"></div>
+        <p class="enlace-cambio">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+
+        <div class="credenciales-demo">
+            <small>Usuarios de prueba creados:<br> <code>ebalcazar</code> / <code>123</code> &bull; <code>cfernandez</code> / <code>123</code></small>
+        </div>
+    </div>
+
+    <!-- PANEL DE BIENVENIDA TRAS LOGIN EXITOSO -->
+    <div class="container" id="panelBienvenida" style="display: none;">
+        <h2 id="txtBienvenida">¡Bienvenido!</h2>
+        <p id="txtSubtituloUsuario" class="subtitulo"></p>
+
+        <div class="info-card">
+            <p>✅ <strong>Autenticación exitosa en Node.js</strong></p>
+            <p>Petición procesada de forma asíncrona mediante Express sin recargar la página.</p>
+        </div>
+
+        <button id="btnCerrarSesion" class="btn-secundario">Cerrar sesión</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

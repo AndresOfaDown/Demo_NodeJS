@@ -1,56 +1,44 @@
-# 🔐 Demostración Práctica: Login en Node.js (Nativo vs. Express)
+# 🔐 Demostración Práctica: Registro y Login en Node.js
 ### Materia: Tecnología Web (INF513) - UAGRM | Ing. Evans Balcázar
 
-Este proyecto es una demostración **simple y concisa** de un sistema de **Inicio de Sesión (Login)** con Node.js, diseñada específicamente para responder a la pregunta del docente:
-> *"¿Para qué usamos un framework como Express si Node.js ya tiene su propio servidor web?"*
+Este proyecto reproduce fielmente el diseño y la funcionalidad del sistema de **Registro y Login de Usuarios**, utilizando **Node.js** y **Express** como servidor backend asíncrono.
 
 ---
 
-## 📁 Archivos del Proyecto
+## 🚀 Características Principales
 
-* **`server.js` (Con Framework - Express):**  
-  Implementa el servidor y la API de login en solo **~30 líneas de código**. Muestra cómo Express simplifica el parseo de JSON y el enrutamiento.
-* **`servidor_nativo.js` (Sin Framework - Node.js Puro):**  
-  El mismo sistema pero hecho con el módulo `http` nativo de Node.js. Muestra cómo toca recibir los datos en *chunks de buffer* y servir los archivos HTML/CSS manualmente.
-* **`public/` (Frontend):**  
-  Página web simple (`index.html`, `styles.css`, `app.js`) que envía las credenciales mediante la `Fetch API` en segundo plano.
+1. **Crear una Cuenta (`registro.html`):**
+   * Formulario idéntico con campos: *Nombre, Apellido, Nombre de usuario, Correo electrónico, Teléfono y Contraseña*.
+   * **Validación Asíncrona en Tiempo Real:** Mientras el usuario escribe, Node.js verifica en segundo plano si el nombre de usuario o el correo ya están registrados (`POST /api/validar`) y muestra:
+     * `✅ usuario disponible`
+     * `❌ Este usuario ya está en uso`
+   * Al registrarse, los datos se guardan de forma asíncrona no bloqueante en `data/usuarios.json`.
+
+2. **Iniciar Sesión (`login.html`):**
+   * Formulario de autenticación (`POST /api/login`).
+   * Valida credenciales contra `usuarios.json`.
+   * Muestra mensaje de bienvenida personalizado al iniciar sesión sin recargar la página.
 
 ---
 
-## ▶️ 1. Cómo Ejecutar el Sistema
+## ▶️ Cómo Ejecutar el Sistema
 
-Abre tu terminal en la carpeta `demo_nodejs`:
-
-### Opción A: Servidor con Express (Recomendado)
+En tu terminal:
 ```bash
+cd demo_nodejs
 npm start
 ```
-Abre tu navegador en: 👉 **`http://localhost:3000`**
+*(O en modo desarrollo con auto-recarga: `npm run dev`)*.
 
-### Opción B: Servidor Nativo (Sin Framework)
-```bash
-npm run nativo
-```
-Abre tu navegador en: 👉 **`http://localhost:3001`**
+Abre tu navegador en:
+👉 **`http://localhost:3000`** *(te llevará automáticamente a `registro.html`)*
 
----
-
-## 🔑 Credenciales de Prueba
-
-* **Usuario:** `admin` | **Contraseña:** `123`
-* **Usuario:** `estudiante` | **Contraseña:** `123`
-*(Si ingresas cualquier otro dato, Node.js responderá con un error 401 en JSON).*
+O ingresa directamente a:
+* **Registro:** `http://localhost:3000/registro.html`
+* **Login:** `http://localhost:3000/login.html`
 
 ---
 
-## 💡 El Punto Fuerte para tu Exposición
-
-En tu exposición puedes abrir los dos archivos de código (`servidor_nativo.js` y `server.js`) uno al lado del otro y explicar:
-
-1. **En Node.js Nativo (Sin Express):**
-   * Tuvimos que escuchar eventos `req.on('data')` y `req.on('end')` para juntar los fragmentos de memoria.
-   * Tuvimos que leer los archivos HTML y CSS con `fs.readFile` y escribir las cabeceras HTTP (`Content-Type`) a mano.
-2. **En Node.js con Express:**
-   * El parseo de JSON se hace en 1 línea: `app.use(express.json())`.
-   * Servir la web se hace en 1 línea: `app.use(express.static('public'))`.
-   * El código es un 60% más corto, más legible y mantenible.
+## 🔑 Usuarios de Prueba Ya Registrados
+* Usuario: `ebalcazar` | Contraseña: `123`
+* Usuario: `cfernandez` | Contraseña: `123`

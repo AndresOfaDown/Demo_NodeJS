@@ -5,8 +5,9 @@
     "apellido": "Balcázar",
     "usuario": "ebalcazar",
     "email": "ebalcazar@uagrm.edu.bo",
+    "telefono": "70012345",
+    "password": "123",
     "rol": "Docente",
-    "estado": "Activo",
     "creadoEn": "2026-11-10T14:30:00.000Z"
   },
   {
@@ -15,28 +16,9 @@
     "apellido": "Fernández",
     "usuario": "cfernandez",
     "email": "carlos.f@uagrm.edu.bo",
+    "telefono": "78098765",
+    "password": "123",
     "rol": "Estudiante",
-    "estado": "Activo",
     "creadoEn": "2026-11-10T15:00:00.000Z"
-  },
-  {
-    "id": 3,
-    "nombre": "Mariana",
-    "apellido": "Roca",
-    "usuario": "mroca",
-    "email": "mroca@uagrm.edu.bo",
-    "rol": "Administrador",
-    "estado": "Activo",
-    "creadoEn": "2026-11-11T09:15:00.000Z"
-  },
-  {
-    "id": 4,
-    "nombre": "Jorge",
-    "apellido": "Suárez",
-    "usuario": "jsuarez",
-    "email": "jsuarez@uagrm.edu.bo",
-    "rol": "Estudiante",
-    "estado": "Inactivo",
-    "creadoEn": "2026-11-12T11:45:00.000Z"
   }
 ]
